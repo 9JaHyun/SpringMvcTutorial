@@ -1,0 +1,41 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="edu2:war exploded">
+    <output-path>$PROJECT_DIR$/edu2/target/edu2</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>edu2</module>
+        <packaging>war</packaging>
+        <unpackNestedArchives>false</unpackNestedArchives>
+      </options>
+    </properties>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="edu2" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.22" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat.embed:tomcat-embed-core:9.0.56" />
+          <element id="library" level="project" name="Maven: org.apache.tomcat:tomcat-annotations-api:9.0.56" />
+          <element id="library" level="project" name="Maven: com.oracle.ojdbc:ojdbc8:19.3.0.0" />
+          <element id="library" level="project" name="Maven: com.oracle.ojdbc:ucp:19.3.0.0" />
+          <element id="library" level="project" name="Maven: com.oracle.ojdbc:oraclepki:19.3.0.0" />
+          <element id="library" level="project" name="Maven: com.oracle.ojdbc:osdt_cert:19.3.0.0" />
+          <element id="library" level="project" name="Maven: com.oracle.ojdbc:osdt_core:19.3.0.0" />
+          <element id="library" level="project" name="Maven: com.oracle.ojdbc:simplefan:19.3.0.0" />
+          <element id="library" level="project" name="Maven: com.oracle.ojdbc:ons:19.3.0.0" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.2" />
+          <element id="library" level="project" name="Maven: org.glassfish.web:javax.servlet.jsp.jstl:1.2.1" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp.jstl:jstl-api:1.2" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
+          <element id="library" level="project" name="Maven: javax.servlet.jsp:jsp-api:2.1" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/edu2/target/edu2/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="edu2/web/Web" />
+    </root>
+  </artifact>
+</component>

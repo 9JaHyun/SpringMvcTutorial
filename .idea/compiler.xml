@@ -13,7 +13,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="edu1" target="1.7" />
+      <module name="edu1" target="9" />
       <module name="edu1ToSpring" target="11" />
       <module name="edu2" target="9" />
       <module name="edu2ToSpring" target="11" />

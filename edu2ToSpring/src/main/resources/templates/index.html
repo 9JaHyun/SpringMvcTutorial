@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="col-md-12">
+    <div class="row">
+        <div class="col-md-6">
+            <a th:onclick="|location.href='@{/save}'|" role = "button" class="btn btn-primary">회원 등록</a>
+        </div>
+    </div>
+    <br>
+    <!--        목록 출력 영역-->
+    <table class="table table-horizontal table-bordered">
+        <thead class="thead-strong">
+        <tr>
+            <th>No.</th>
+            <th>ID</th>
+            <th>PASSWORD</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+        <tr th:each="member : ${members}">
+            <td><a href="members/memberInfo.html" th:href="@{/members/{id}(id=${member.memberId})}" th:text="${member.memberId}"></a></td>
+            <td th:text="${member.id}"></td>
+            <td th:text="${member.password}"></td>
+            <td th:text="${member.name}"></td>
+            <td th:text="${member.email}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

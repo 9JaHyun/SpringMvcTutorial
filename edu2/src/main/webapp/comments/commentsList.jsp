@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="domain.Comments" %>
+<%@ page import="comments.domain.comment.Comments" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--JSTL 확장 라이브러리--%>
@@ -19,11 +19,11 @@
     <th>age</th>
     </thead>
     <tbody>
-    <c:forEach var="comment" items="${requestScope.commentList}">
+    <c:forEach var="members" items="${requestScope.commentList}">
         <tr>
-            <td>${comment.id}</td>
-            <td>${comment.name}</td>
-            <td>${comment.content}</td>
+            <td>${members.id}</td>
+            <td>${members.name}</td>
+            <td>${members.content}</td>
         </tr>
     </c:forEach>
     </tbody>

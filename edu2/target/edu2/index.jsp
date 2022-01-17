@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
-<ul>
+<ul> CommentServlet
     <li>FrontController - v1
         <ul>
             <li><a href="./front-controller/v1/comments/new-form">댓글 등록</a></li>
@@ -38,6 +38,11 @@
             <li><a href="./front-controller/v5/v4/comments">댓글 목록</a></li>
         </ul>
     </li>
+</ul>
+
+<ul> MemberServlet
+    <li><a href="./front-controller/members/new-form">회원 등록</a></li>
+    <li><a href="./front-controller/members">회원 목록</a></li>
 </ul>
 </body>
 </html>

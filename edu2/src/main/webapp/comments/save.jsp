@@ -1,6 +1,6 @@
-<%@ page import="domain.CommentsDao" %>
-<%@ page import="domain.Comments" %>
-<%@ page import="domain.dto.CommentSaveRequestDto" %>
+<%@ page import="comments.domain.comment.CommentsDao" %>
+<%@ page import="comments.domain.comment.Comments" %>
+<%@ page import="comments.domain.comment.dto.CommentSaveRequestDto" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     // request, response 사용 가능

@@ -1,0 +1,49 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <style>
+        .container {
+            max-width: 560px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="py-5 text-center">
+        <h2>회원 정보</h2>
+    </div>
+    <div>
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id" class="form-control"
+               value="1" th:value="${member.id}" readonly>
+    </div>
+    <div>
+        <label for="password">PASSWORD</label>
+        <input type="text" id="password" name="password" class="form-control"
+               value="상품A" th:value="${member.password}" readonly>
+    </div>
+    <div>
+        <label for="name">NAME</label>
+        <input type="text" id="name" name="name" class="form-control"
+               value="10000" th:value="${member.name}" readonly>
+    </div>
+    <div>
+        <label for="email">EMAIL</label>
+        <input type="text" id="email" name="email" class="form-control"
+               value="10" th:value="${member.email}" readonly>
+    </div>
+    <hr class="my-4">
+    <div class="row">
+        <div class="col">
+            <button class="w-100 btn btn-primary btn-lg"
+                    th:onclick="|location.href='@{/members/{memberId}/edit(memberId=${member.id})}'|" type="button">수정하기</button>
+        </div>
+        <div class="col">
+            <button class="w-100 btn btn-secondary btn-lg"
+                    th:onclick="|location.href='@{/}'|"
+                    type="button">목록</button>
+        </div>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

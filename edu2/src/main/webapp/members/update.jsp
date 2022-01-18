@@ -1,4 +1,4 @@
-<%@ page import="member.domain.member.Member" %><%--
+<%@ page import="member.domain.Member" %><%--
   Created by IntelliJ IDEA.
   User: admin
   Date: 2022-01-17

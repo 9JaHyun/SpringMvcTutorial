@@ -1,7 +1,7 @@
 package member.controller.SessionTest.controller;
 
 import member.controller.SessionTest.SessionController;
-import member.domain.member.Member;
+import member.domain.Member;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

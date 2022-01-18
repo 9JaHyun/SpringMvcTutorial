@@ -1,9 +1,8 @@
-<%@ page import="member.domain.member.Member" %>
+<%@ page import="member.domain.Member" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%--JSTL 확장 라이브러리--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <html>
 <head>
     <meta charset="UTF-8">

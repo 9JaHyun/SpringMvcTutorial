@@ -1,8 +1,7 @@
 package member.controller.controller;
 
-import comments.domain.comment.CommentsDao;
 import member.controller.Controller;
-import member.domain.member.MemberDao;
+import member.domain.MemberDao;
 
 import java.util.Map;
 

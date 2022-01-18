@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/edu1/edu1.iml" filepath="$PROJECT_DIR$/edu1/edu1.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu2/edu2.iml" filepath="$PROJECT_DIR$/edu2/edu2.iml" />
       <module fileurl="file://$PROJECT_DIR$/edu2ToSpring/edu2ToSpring.iml" filepath="$PROJECT_DIR$/edu2ToSpring/edu2ToSpring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edu3/edu3.iml" filepath="$PROJECT_DIR$/edu3/edu3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edu3ToSpring/edu3ToSpring.iml" filepath="$PROJECT_DIR$/edu3ToSpring/edu3ToSpring.iml" />
     </modules>
   </component>
 </project>

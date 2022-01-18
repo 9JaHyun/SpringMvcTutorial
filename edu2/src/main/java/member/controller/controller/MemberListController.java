@@ -1,10 +1,8 @@
 package member.controller.controller;
 
-import comments.domain.comment.Comments;
-import comments.domain.comment.CommentsDao;
 import member.controller.Controller;
-import member.domain.member.Member;
-import member.domain.member.MemberDao;
+import member.domain.Member;
+import member.domain.MemberDao;
 
 import java.util.List;
 import java.util.Map;

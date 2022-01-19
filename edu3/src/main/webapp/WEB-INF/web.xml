@@ -14,7 +14,7 @@
 
   <servlet>
       <servlet-name>frontControl</servlet-name>
-      <servlet-class>FrontController</servlet-class>
+      <servlet-class>controller.FrontController</servlet-class>
   </servlet>
 
   <servlet>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    thead {
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<script src="jquery-3.6.0.js"></script>
+<script>
+  $(document).ready(() => {
+    $.ajax({
+      type: 'post',
+      url: 'jquery_data.json',
+    }).done(function (result) {
+      makePage(result)
+    }).fail(function (error) {
+      alert(JSON.stringify(error));
+    });
+
+    let fields = ['id', 'first_name', 'last_name', 'email', 'gender', 'ip_address']
+
+    function makePage(result) {
+      let table = $('<table>').attr("border", "1");
+      let thead = $('<thead>').append(makeHead(fields));
+      let tbody = makeBody(result);
+
+      table.append(thead);
+      table.append(tbody);
+      $('#show').append(table);
+    }
+    function makeHead(obj) {
+      let tr = $('<tr>')
+      fields.forEach(function (field) {
+        let td = $('<td>').text(field);
+        tr.append(td);
+      });
+      return tr;
+    }
+
+    function makeTr(obj) {
+      let tr = $('<tr>').attr('id', obj.id);
+      fields.forEach(function (field) {
+        let td = $('<td>').text(obj[field]);
+        tr.append(td);
+      });
+      return tr;
+    }
+
+    function makeBody(arr) {
+      let tbody = $('<tbody>');
+      arr.forEach(item => {
+        tbody.append(makeTr(item));
+      })
+      return tbody;
+    }
+
+    $('#register').click(() => {
+      let id = $('#id').val();
+      let fn = $('#first_name').val();
+      let ln = $('#last_name').val();
+      let email = $('#email').val();
+      let gender = $('#gender').val();
+      let ipAddress = $('#ip_address').val();
+
+      let row = {
+        id: id,
+        first_name: fn,
+        last_name: ln,
+        email: email,
+        gender: gender,
+        ip_address: ipAddress
+      };
+
+      let tr = makeTr(row);
+      $('#show>table>tbody').append(tr);
+
+    });
+
+  });
+</script>
+<body>
+<h3>입력화면</h3>
+<div id="add">
+  아이디: <input type="text" id="id"><br>
+  이름: <input type="text" id="first_name"><br>
+  성씨: <input type="text" id="last_name"><br>
+  이메일: <input type="text" id="email"><br>
+  성별: <input type="text" id="gender"><br>
+  IP주소: <input type="text" id="ip_address"><br>
+  <button id="register">등록</button>
+</div>
+<div id="show"></div>
+</body>
+</html>

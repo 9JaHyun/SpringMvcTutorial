@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>공지사항</title>
+</head>
+<body>
+<table>
+  <tr>
+    <th>제목</th>
+    <th>작성시간</th>
+    <th>조회수</th>
+  </tr>
+  <tr th:each="notice : ${notices}">
+    <td th:text="${notice.title}">title</td>
+    <td th:text="${notice.createdAt}">title</td>
+    <td th:text="${notice.hit}">title</td>
+  </tr>
+</table>
+</body>
+</html>

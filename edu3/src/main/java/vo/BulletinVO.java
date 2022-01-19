@@ -13,4 +13,8 @@ public class BulletinVO {
     private String bbsImage;
     private LocalDateTime bbsCreateDate;
     private int bbsHit;
+
+    public void increaseHit() {
+        this.bbsHit += 1;
+    }
 }

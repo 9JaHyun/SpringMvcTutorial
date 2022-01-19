@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시글</title>
+</head>
+<body>
+<form action="../bulletinInfo.html" th:action th:object="${bulletin}" method="post">
+  <div>
+    <label for="title">제목</label>
+    <input type="text" id="title" th:field="*{title}" class="form-control"
+           readonly>
+  </div>
+  <div>
+    <label for="writer">작성자</label>
+    <input type="text" id="writer" th:field="*{writer}" class="formcontrol">
+  </div>
+  <div>
+    <label for="content">내용</label>
+    <input type="text" id="content" th:field="*{content}" class="form-control">
+  </div>
+  <div>
+    <label for="image">이미지</label>
+      <input type="text" id="image" th:field="*{image}" class="formcontrol">
+  </div>
+  <form name="delFrm" action="${pageContext.request.contextPath}/bulletinDelete.do" method="post"></form>
+  <form name="updFrm" action="${pageContext.request.contextPath}/bulletinUpdate.do" method="post"></form>
+</body>
+</html>

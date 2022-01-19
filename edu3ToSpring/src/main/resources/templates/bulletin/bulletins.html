@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>게시판</title>
+</head>
+<script>
+  let input = document.getElementById("bulletinBtn");
+  input.addEventListener("click", search);
+  function search() {
+    let request = new XMLHttpRequest();
+    request.open("get", "${pageContext.request.contextPath}/bulletinSelect.do")
+    request.send()
+    let input = document.getElementById("bulletinSearch");
+
+    input.innerText
+  }
+</script>
+<body>
+<input th:type="text" id="bulletinSearch" placeholder="검색">
+<input th:type="button" id="bulletinBtn" value="검색" >
+<table border="1">
+  <thead>
+  <tr>
+    <th>글번호</th>
+    <th>글제목</th>
+    <th>작성자</th>
+    <th>작성일시</th>
+    <th>조회수<th>
+  </tr>
+  </thead>
+  <tbody th:each="bulletin : ${bulletinList}">
+    <tr>
+      <td>*{bbsId}</td>
+      <td>*{bbsTitle}</td>
+      <td>*{bbsWriter}</td>
+      <td>*{bbsCreateDate}</td>
+      <td>*{bbsHit}</td>
+    </tr>
+  </tbody>
+</table>
+<li><a th:href="@{/bulletins/addForm}">입력</a></li>
+</body>
+</html>

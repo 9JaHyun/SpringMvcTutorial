@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script src="jquery-3.6.0.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', loadEvent);
+    document.addEventListener('DOMContentLoaded', loadEventJQuery);
+
+    function loadEvent() {
+      const fruits = ['Apple', 'Banana', 'Cherry'];
+      let ul = document.createElement('ul');
+      fruits.forEach((item) => {
+        let li = document.createElement("li");
+        li.setAttribute('class', item)
+        li.innerText = item;
+        ul.appendChild(li);
+      });
+      document.getElementById('show').appendChild(ul)
+    }
+
+    function loadEventJQuery() {
+      const fruits = ['Apple', 'Banana', 'Cherry'];
+      let ul = $('<ul>');
+      fruits.forEach((item) => {
+        let li = $('<li>').attr('class', item);
+        li.text(item);
+        ul.append(li);
+      })
+      $('#show').append(ul);
+    }
+  </script>
+</head>
+<body>
+<div id="show"></div>
+</body>
+</html>

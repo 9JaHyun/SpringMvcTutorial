@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: header(~{::title})">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>메인페이지</title>
+  <style>
+    .menu ul {
+      list-style: none;
+    }
+
+    .menu li {
+      display: inline-block;
+      width: 100px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+<div th:class="head" th:replace="head">
+</div>
+<div class="menu" th:replace="menu">
+</div>
+<div class="menu" th:replace="body">
+</div>
+<div class="foot" th:replace="foot">
+</div>
+</body>
+</html>

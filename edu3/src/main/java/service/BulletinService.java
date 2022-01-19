@@ -1,19 +1,39 @@
 package service;
 
+import dao.BulletinDAO;
 import java.util.List;
 import vo.BulletinVO;
 
-public interface BulletinService {
+public class BulletinService {
+    private final BulletinDAO bulletinDAO = BulletinDAO.getInstance();
 
-    public List<BulletinVO> selectList();
+    public void save(BulletinVO bulletinVO) {
+        bulletinDAO.insert(bulletinVO);
+    }
 
-    public BulletinVO selectOne(int bbsId);
+    public BulletinVO findById(Integer id) {
+        return bulletinDAO.selectOne(id);
+    }
 
-    List<BulletinVO> selectByTitle(String title);
+    public List<BulletinVO> findByTitle(String title) {
+        return bulletinDAO.selectByTitle(title);
+    }
 
-    public BulletinVO insert(BulletinVO vo);
+    public List<BulletinVO> findAll() {
+        return bulletinDAO.selectAll();
+    }
 
-    public BulletinVO update(BulletinVO vo);
+    public BulletinVO update(BulletinVO bulletinVO) {
+        return bulletinDAO.update(bulletinVO);
+    }
 
-    public int delete(int bbsId);
+    public BulletinVO updateCount(BulletinVO bulletinVO) {
+        bulletinDAO.updateCount(bulletinVO.getBbsId());
+        bulletinVO.increaseHit();
+        return bulletinVO;
+    }
+
+    public void delete(Integer id) {
+        bulletinDAO.deleteById(id);
+    }
 }

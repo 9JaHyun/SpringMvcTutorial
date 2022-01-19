@@ -9,10 +9,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>게시글</title>
 </head>
 <body>
 <table border="1">
+    <form name="delFrm" action="${pageContext.request.contextPath}/bulletinDelete.do" method="post"></form>
+    <form name="updFrm" action="${pageContext.request.contextPath}/bulletinUpdate.do" method="post"></form>
     <thead>
     <tr>
         <th>글번호</th>

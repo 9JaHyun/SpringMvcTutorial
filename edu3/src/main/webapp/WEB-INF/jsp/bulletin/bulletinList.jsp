@@ -39,11 +39,11 @@
     <tbody>
         <c:forEach var="bulletin" items="${bulletinList}">
             <tr>
-                <td>${bulletin.bbsId}</td>
-                <td>${bulletin.bbsTitle}</td>
-                <td>${bulletin.bbsWriter}</td>
-                <td>${bulletin.bbsCreateDate}</td>
-                <td>${bulletin.bbsHit}</td>
+                <td>*{bbsId}</td>
+                <td>*{bbsTitle}</td>
+                <td>*{bbsWriter}</td>
+                <td>*{bbsCreateDate}</td>
+                <td>*{bbsHit}</td>
             </tr>
         </c:forEach>
     </tbody>

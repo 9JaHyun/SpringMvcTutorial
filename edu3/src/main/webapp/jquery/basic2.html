@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<script src="jquery-3.6.0.js"></script>
+<script>
+  const members =[{
+    fullName: "홍길동",
+    age: 20,
+    phone: "010-1111-5678"
+  },{
+    fullName: "김만수",
+    age: 25,
+    phone: "010-2222-5678"
+  },{
+    fullName: "홍민기",
+    age: 27,
+    phone: "010-3333-5678"
+  }]
+  // document.addEventListener('DOMContentLoaded', ...)
+  $(document).ready(() => {
+    let tbl = $('<table id="tbl">').attr('border', '1');
+    members.forEach((item) => {
+      function delFnc() {
+        console.log("delete")
+        console.log(this);
+        $(this).parent().parent().remove();
+      }
+
+      function mouseOverFnc() {
+        $(this).css('background-color', 'yellow')
+      }
+
+      function mouseOutFnc() {
+        $(this).css('background-color', '')
+      }
+
+      let tr = $('<tr>').append(
+          $('<td>').text(item.fullName),
+          $('<td>').text(item.age),
+          $('<td>').text(item.phone),
+          $('<td>').html($('<button>').text('삭제').click(delFnc))
+      );
+      tr.mouseover(mouseOverFnc).mouseout(mouseOutFnc);
+      tbl.append(tr)
+    });
+    $('#show').append(tbl);
+    $('div').eq(2).append(tbl);
+  });
+</script>
+<body>
+<div id="show1">1</div>
+<div id="show2">2</div>
+<div id="show3">3</div>
+<div id="show4">4</div>
+</body>
+</html>

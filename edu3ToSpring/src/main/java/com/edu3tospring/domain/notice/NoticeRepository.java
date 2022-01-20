@@ -5,8 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-public interface NoticeRepository extends JpaRepository<NoticeJpa, Integer> {
+public interface NoticeRepository extends JpaRepository<Notice, Integer> {
 
-    @Query("SELECT n FROM NoticeJpa n where n.title like %:title% order by n.createdAt desc")
-    public List<NoticeJpa> findByTitle(@Param("title") String title);
+    @Query("SELECT n FROM Notice n where n.title like %:title% order by n.created_at desc")
+    public List<Notice> findByTitle(@Param("title") String title);
 }

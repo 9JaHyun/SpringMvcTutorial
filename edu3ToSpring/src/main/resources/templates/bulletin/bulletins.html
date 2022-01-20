@@ -1,44 +1,49 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8">
-  <title>게시판</title>
-</head>
-<script>
-  let input = document.getElementById("bulletinBtn");
-  input.addEventListener("click", search);
-  function search() {
-    let request = new XMLHttpRequest();
-    request.open("get", "${pageContext.request.contextPath}/bulletinSelect.do")
-    request.send()
-    let input = document.getElementById("bulletinSearch");
-
-    input.innerText
-  }
-</script>
-<body>
-<input th:type="text" id="bulletinSearch" placeholder="검색">
-<input th:type="button" id="bulletinBtn" value="검색" >
-<table border="1">
-  <thead>
-  <tr>
-    <th>글번호</th>
-    <th>글제목</th>
-    <th>작성자</th>
-    <th>작성일시</th>
-    <th>조회수<th>
-  </tr>
-  </thead>
-  <tbody th:each="bulletin : ${bulletinList}">
-    <tr>
-      <td>*{bbsId}</td>
-      <td>*{bbsTitle}</td>
-      <td>*{bbsWriter}</td>
-      <td>*{bbsCreateDate}</td>
-      <td>*{bbsHit}</td>
-    </tr>
-  </tbody>
-</table>
-<li><a th:href="@{/bulletins/addForm}">입력</a></li>
-</body>
+<html th:replace="~{/layout/template :: template(~{::title}, ~{::div})}"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<title>게시판</title>
+<div class="container-fluid">
+    <table th:class="table">
+        <input th:type="text" id="bulletinSearch" placeholder="검색">
+        <button class="btn btn-success" th:type="button" id="bulletinBtn" >
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg> 검색
+        </button>
+        <thead>
+        <tr>
+            <th>글번호</th>
+            <th>글제목</th>
+            <th>작성자</th>
+            <th>작성일시</th>
+            <th>조회수
+            <th>
+        </tr>
+        </thead>
+        <tbody th:each="bulletin : ${bulletins}">
+        <tr>
+            <td th:text="${bulletin.id}"></td>
+            <td th:text="${bulletin.title}"></td>
+            <td th:text="${bulletin.writer}"></td>
+            <td th:text="${#temporals.format(bulletin.created_at, 'yyyy-MM-dd HH:mm:ss')}"></td>
+            <td th:text="${bulletin.hit}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary float-end" th:onclick="|location.href='@{/bulletins/addForm}'|">게시글 등록
+    </button>
+</div>
 </html>
+<script>
+    let input = document.getElementById("bulletinBtn");
+    input.addEventListener("click", search);
+
+    function search() {
+        let request = new XMLHttpRequest();
+        request.open("get", "${pageContext.request.contextPath}/bulletinSelect.do")
+        request.send()
+        let input = document.getElementById("bulletinSearch");
+
+        input.innerText
+    }
+</script>

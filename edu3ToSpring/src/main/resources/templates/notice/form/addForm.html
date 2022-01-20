@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html th:replace="~{/layout/template :: template(~{::title}, ~{::div})}"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<title>공지사항 등록</title>
+<div class="container-fluid">
+    <form action="" th:action th:object="${newNotice}" method="post">
+        <div>
+            <label for="title">제목</label>
+            <input type="text" id="title" th:field="*{title}" class="form-control"
+                   placeholder="제목을 입력하세요">
+        </div>
+        <div>
+            <label for="content">내용</label>
+            <textarea id="content" th:field="*{content}" class="form-control"
+                      placeholder="내용을 입력하세요"></textarea>
+        </div>
+        <div class="row">
+            <div class="col">
+                <button class="w-100 btn btn-primary btn-lg" type="submit">등록</button>
+            </div>
+            <div class="col">
+                <button class="w-100 btn btn-secondary btn-lg"
+                        th:onclick="|location.href='@{/notices}'|"
+                        type="button">취소
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+</html>

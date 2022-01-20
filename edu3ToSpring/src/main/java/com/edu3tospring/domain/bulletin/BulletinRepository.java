@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface BulletinRepository extends JpaRepository<Bulletin, Integer> {
 
-    @Query("SELECT b FROM Bulletin b where b.title like %:title% order by b.createDate desc")
+    @Query("SELECT b FROM Bulletin b where b.title like %:title% order by b.created_at desc")
     public List<Bulletin> findByTitle(@Param("title") String title);
 }

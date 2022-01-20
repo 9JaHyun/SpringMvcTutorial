@@ -14,9 +14,14 @@ public class IndexController {
     private final BulletinService bulletinService;
     private final NoticeService noticeService;
 
+    @GetMapping("/")
+    public String index() {
+        return "index";
+    }
+
     @GetMapping("/bulletins")
     public String showBulletin(Model model) {
-        model.addAttribute("bulletin", bulletinService.findAll());
+        model.addAttribute("bulletins", bulletinService.findAll());
         return "bulletin/bulletins";
     }
 
@@ -24,5 +29,11 @@ public class IndexController {
     public String showNotices(Model model) {
         model.addAttribute("notices", noticeService.findAll());
         return "notice/notices";
+    }
+
+    @GetMapping("/test")
+    public String test(Model model) {
+        model.addAttribute("notices", noticeService.findAll());
+        return "index1";
     }
 }

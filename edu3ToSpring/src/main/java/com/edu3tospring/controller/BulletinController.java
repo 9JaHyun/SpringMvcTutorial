@@ -25,9 +25,9 @@ public class BulletinController {
     }
 
     @PostMapping("/addForm")
-    public String add(@RequestBody Bulletin bulletin) {
+    public String add(Bulletin bulletin) {
         bulletinService.save(bulletin);
-        return "bulletin/bulletins";
+        return "redirect:/bulletins";
     }
 
     @GetMapping("/{id}/edit")

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html th:replace="~{/layout/template :: template(~{::title}, ~{::div})}"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<title>공지사항</title>
+<div class="container-fluid">
+    <table>
+        <tr>
+            <th>제목</th>
+            <th>내용</th>
+            <th>작성시간</th>
+            <th>조회수</th>
+        </tr>
+        <td th:text="${notice.title}">title</td>
+        <td th:text="${notice.content}">content</td>
+        <td th:text="${notice.created_at}">created_at</td>
+        <td th:text="${notice.hit}">hit</td>
+        </tr>
+    </table>
+    <button class="btn btn-primary float-end"
+            th:onclick="|location.href='@{/notices/{id}/edit(id=${notice.id})}'|">수정
+    </button>
+    <form th:action="@{/notices/{id}/delete(id=${notice.id})}" id="delBtn"  method="post">
+        <button type="submit" class="btn btn-primary float-end">삭제</button>
+    </form>
+    <br>
+    <section th:replace="/layout/comment :: comment"></section>
+</div>
+</html>

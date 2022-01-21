@@ -19,7 +19,8 @@
             <th>조회수</th>
         </tr>
         <tr th:each="notice : ${notices}">
-            <td><a th:text="${notice.title}" th:href="@{/notices/{id}(id=${notice.id})}">title</a></td>
+            <td><a th:text="${notice.title}" th:href="@{/notices/{id}(id=${notice.id})}">title</a>
+            </td>
             <td th:text="${#temporals.format(notice.created_at, 'yyyy-MM-dd HH:mm:ss')}">작성시간</td>
             <td th:text="${notice.hit}">조회수</td>
         </tr>

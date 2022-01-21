@@ -5,6 +5,9 @@
     <file type="web" url="file://$PROJECT_DIR$/edu2" />
     <file type="web" url="file://$PROJECT_DIR$/edu3" />
   </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="FLOW" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

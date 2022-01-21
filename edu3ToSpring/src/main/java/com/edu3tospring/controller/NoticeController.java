@@ -3,18 +3,13 @@ package com.edu3tospring.controller;
 import com.edu3tospring.domain.notice.Notice;
 import com.edu3tospring.domain.notice.NoticeService;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@Slf4j
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/notices")
@@ -30,7 +25,6 @@ public class NoticeController {
 
     @PostMapping("/add")
     public String save(Notice notice) {
-        log.info("notice = {}", notice);
         noticeService.save(notice);
         return "redirect:/notices";
     }
